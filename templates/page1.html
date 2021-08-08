@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 8px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.a{
+  background-color: lightgrey;
+  width: 80%;
+  border: 10px solid black;
+  padding: 50px;
+  margin: 20px;
+  color: black;
+}
+
+.b{
+  padding: 5px 20px 50px 50px;
+  /*margin: 20px;*/
+}
+
+</style>
+</head>  
+   <body>  
+       
+       <center><h1 style="font-size:50px;" class="a">DEFECT DETECTION IN PCB</h1></center><br><br>
+       
+      <!-- <form action = "https://sentiment-predictions.herokuapp.com//success" method = "POST">
+         <form action = "http://localhost:5000/success" method = "POST">
+         <p>Enter Text <input type = "text" name = "name" /></p>  
+         
+         <p><input type = "submit" value = "submit" /></p>  
+      </form> -->  
+      <div class=b>
+        <h3><p>Upload an image of PCB to classify its qualty as Good or Bad</p></h3>  
+      <form action = "https://pcb-defect-detection.herokuapp.com/success" method = "POST" enctype="multipart/form-data">
+      <!-- <form action = "https://cat-or-dog.herokuapp.com/success" method = "POST" enctype="multipart/form-data"> -->
+    
+      <label for="img"><h4>Select an image:</h4></label>
+      <input type="file" id="img" name="img" accept="image/*" required style="font-size: 16px;">
+      <!-- <input type="submit" class="button" style="vertical-align:middle" value=" Classify "> -->
+      <button class="button" style="vertical-align:middle"><span>Classify </span>
+
+      </form></div>
+
+   </body>  
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>  
+<html> 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+.a{
+	padding: 2% 5% 5% 5%;
+}
+.b{
+	
+  width: 40%;
+  border: 5px solid black;
+  /*padding: 50px; cpu;
+  margin: 20px;*/
+  text-align: center;
+  color: black;
+}
+</style>
+</head> 
+   <body>
+   <div class=a>  
+      <h1><strong>CLASSIFICATION & UPLOADED IMAGE</strong></h1> <br> 
+      
+      <!-- <img src={{result}} width="500" height="333"> -->
+     <img src="{{url_for('static', filename=result)}} " width="500" height="333">
+      <h2>Uploaded image: {{result}}</h2>
+           
+      
+      {%if pred == "Good"%}
+      <h1 style="color:#02f523;" class="b">Classification: {{pred}}</h1></p> 
+    {% else %}
+      <h1 style="color:red;" class="b">Classification: {{pred}}</h1></p>
+      {% endif %}
+      </div>
+   </body>  
+</html> 
